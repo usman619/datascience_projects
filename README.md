@@ -24,3 +24,19 @@ streamlit run app.py
 ```
 
 ## 3. EDA Basketball
+This project performs exploratory data analysis (EDA) on NBA player statistics. It allows users to filter player stats by year, team, and position, and visualize the data using various charts and heatmaps.
+
+- Run the Streamlit app using the following command:
+```bash
+cd 3_eda_basketball
+streamlit run app.py
+```
+
+## 4. EDA Football
+This project performs exploratory data analysis (EDA) on Football player statistics. It allows users to filter player stats by year, team, and position, and visualize the data using various charts and heatmaps.
+
+- Run the Streamlit app using the following command:
+```bash
+cd 4_eda_football
+streamlit run app.py
+```
