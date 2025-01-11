@@ -40,3 +40,13 @@ This project performs exploratory data analysis (EDA) on Football player statist
 cd 4_eda_football
 streamlit run app.py
 ```
+
+## 5 EDA S&P-500 Stock:
+
+This project performs exploratory data analysis (EDA) on S&P 500 stock prices. It retrieves the list of S&P 500 companies, allows users to filter companies by sector, and visualizes the stock closing prices for the selected companies.
+
+- Run the Streamlit app using the following command:
+```bash
+cd 5_eda_sp500_stock
+streamlit run app.py
+```

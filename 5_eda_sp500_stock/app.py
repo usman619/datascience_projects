@@ -34,3 +34,40 @@ df_selected_sector = df[(df['GICS Sector'].isin(selected_sector))]
 st.header('Displaying Companies in Selected Sector')
 st.write(f'Shape of Data Frame: Rows({str(df_selected_sector.shape[0])}) Columns({str(df_selected_sector.shape[1])})')
 st.dataframe(df_selected_sector)
+
+# To get the stock price data using symbols for the first 20 companies
+data = yf.download(
+    tickers=list(df[:20].Symbol),
+    period='ytd',
+    interval='1d',
+    group_by='ticker',
+    auto_adjust=True,
+    prepost=True,
+    threads=True,
+    proxy=None
+)
+
+st.header('Stock Prices of the first 20 companies')
+st.dataframe(data)
+
+def price_plot(symbol):
+    df = pd.DataFrame(data[symbol].Close)
+    df['Date'] = df.index
+    
+    plt.fill_between(df.Date, df.Close, color='skyblue', alpha=0.3)
+    plt.plot(df.Date, df.Close, color='skyblue', alpha=0.8)
+
+    plt.xticks(rotation=90)
+    plt.title(symbol, fontweight='bold')
+    plt.xlabel('Date', fontweight='bold')
+    plt.ylabel('Closing Price', fontweight='bold')
+
+    return st.pyplot()
+
+# Siderbar: Number of companies
+num_company = st.sidebar.slider('Number of Companies', 1, 5)
+
+if st.button('Show Plots'):
+    st.header('Price Plot')
+    for i in list(df.Symbol)[:num_company]:
+        price_plot(i)
