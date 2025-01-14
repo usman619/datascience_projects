@@ -50,3 +50,18 @@ This project performs exploratory data analysis (EDA) on S&P 500 stock prices. I
 cd 5_eda_sp500_stock
 streamlit run app.py
 ```
+
+## 6 EDA Cryptocurrency
+
+## 7 Classification Iris
+## 7 Classification Iris
+
+This project demonstrates a classification model using the famous Iris dataset. The Iris dataset contains measurements of sepal length, sepal width, petal length, and petal width for three different species of iris flowers: setosa, versicolor, and virginica.
+
+The application is built using Streamlit and allows users to input measurements for an iris flower. The model then predicts the species of the iris flower based on the input measurements and displays the prediction along with the prediction probabilities.
+
+- Run the Streamlit app using the following command:
+```bash
+cd 7_classification_iris
+streamlit run app.py
+```

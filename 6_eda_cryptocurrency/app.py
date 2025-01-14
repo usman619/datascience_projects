@@ -11,6 +11,8 @@ import time
 image = Image.open('crypto-logo.png')
 st.image(image)
 
+st.set_page_config(layout='wide')
+
 expander_bar = st.expander('About')
 expander_bar.header("""
 - **Python libraries:** streamlit, pandas, numpy, matplotlib, seaborn, BeautifulSoup, requests, json, time
