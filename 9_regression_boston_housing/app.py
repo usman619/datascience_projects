@@ -11,6 +11,8 @@ st.write("""
 st.markdown("---")
 
 df = pd.read_csv("boston.csv")
+X = df.drop('MEDV', axis=1)
+Y = df['MEDV']
 
 st.sidebar.header('User Input Parameters')
 
@@ -57,8 +59,8 @@ st.subheader('User Input Parameters')
 st.dataframe(input_df)
 
 # Importing the model
-load_clf = pickle.load(open('boston_model.pkl','rb'))
-prediction = load_clf.predict(input_df)
+model = pickle.load(open('boston_model.pkl','rb'))
+prediction = model.predict(input_df)
 
 # Showing the Prediction
 st.subheader('Prediction of MEDV')
@@ -66,8 +68,20 @@ st.dataframe(prediction)
 
 st.markdown("---")
 st.subheader('Feature Importance')
-importance = load_clf.feature_importances_
-feature_names = df.columns[:-1]
+importance = model.feature_importances_
+feature_names = X.columns
 df_imp = pd.DataFrame(importance, index=feature_names, columns=['Importance'])
 st.dataframe(df_imp.sort_values(by=['Importance'], ascending=False))
 
+st.markdown("---")
+explainer = shap.TreeExplainer(model)
+shap_values = explainer.shap_values(X)
+
+plt.title('Feature importance based on SHAP values')
+shap.summary_plot(shap_values, X)
+st.pyplot(bbox_inches='tight')
+st.markdown("---")
+
+plt.title('Feature importance based on SHAP values (Bar)')
+shap.summary_plot(shap_values, X, plot_type='bar')
+st.pyplot(bbox_inches='tight')
