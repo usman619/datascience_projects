@@ -83,3 +83,38 @@ The application is built using Streamlit and allows users to input measurements 
     cd 8_classification_penguis
     streamlit run app.py
     ```
+
+## 9. Regression Boston Housing
+
+This project demonstrates a regression model using the Boston Housing dataset. The dataset contains various features of houses in Boston, such as crime rate, average number of rooms, and distance to employment centers, among others. The target variable is the median value of owner-occupied homes (MEDV).
+
+The application is built using Streamlit and allows users to input features for a house. The model then predicts the median value of the house based on the input features and displays the prediction along with feature importance.
+
+- Run the Streamlit app using the following command:
+    ```bash
+    cd 9_regression_boston_housing
+    streamlit run app.py
+    ```
+
+## 10. Clustering Customer Segmentation
+
+This project demonstrates a clustering model for customer segmentation. The dataset contains various features related to customer behavior, such as annual income, spending score, and age. The goal is to segment customers into different groups based on their behavior.
+
+The application is built using Streamlit and allows users to visualize the clusters and understand the characteristics of each segment.
+
+- Run the Streamlit app using the following command:
+    ```bash
+    cd 10_clustering_customer_segmentation
+    streamlit run app.py
+    ```
+## 11. US Population Dashboard
+
+This project presents a dashboard for visualizing the population trends in the United States from 2010 to 2019. The dataset includes population data for all states.
+
+The application is built using Streamlit and provides various visualizations, including a choropleth map and a heatmap, to help users explore population changes over the years. Users can select a specific year to view detailed population data and migration trends for that year.
+
+- Run the Streamlit app using the following command:
+    ```bash
+    cd 11_us_population_dashboard
+    streamlit run app.py
+    ```

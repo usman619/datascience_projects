@@ -5,7 +5,6 @@ import pickle
 from rdkit import Chem
 from rdkit.Chem import Descriptors
 
-
 # Creates a list of boolean values indicating whether each atom in the molecule is aromatic.
 # Counts the number of aromatic atoms.
 # Calculates the total number of heavy atoms in the molecule.
